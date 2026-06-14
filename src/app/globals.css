@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #1E3A5F;
+  --color-mustard: #D4A437;
+  --color-text: #2B2B2B;
+  --color-border: #E0E0E0;
+  --color-cream: #FAF8F2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: var(--color-text);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-mustard);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+::selection {
+  background: #F0E2A8;
+  color: var(--color-navy);
+}
