@@ -1,6 +1,9 @@
 import { Button } from '@/components/Button'
+import { ArticleCard } from '@/components/ArticleCard'
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
+import { getCategoryName, getInterviewList, getKnowledgeList } from '@/lib/api'
+import { formatDate } from '@/lib/date'
 
 const concerns = [
   {
@@ -85,25 +88,32 @@ const consultationPatterns = [
   },
 ]
 
-const knowledgeCards = [
-  {
-    label: 'ナレッジ',
-    title: '啓発広報で「伝わっている実感」が生まれにくい理由',
-    date: '準備中',
-  },
-  {
-    label: 'ナレッジ',
-    title: '業界団体が若年層に届けるための表現設計',
-    date: '準備中',
-  },
-  {
-    label: 'インタビュー',
-    title: '家電製品協会様に聞く、啓発広報の伴走支援',
-    date: '準備中',
-  },
-]
+export default async function Home() {
+  const [knowledge, interviews] = await Promise.all([
+    getKnowledgeList(2),
+    getInterviewList(1),
+  ])
+  const articles = [
+    ...knowledge.map((article) => ({
+      id: `knowledge-${article.id}`,
+      href: `/knowledge/${article.slug}/`,
+      label: getCategoryName(article.category),
+      title: article.title,
+      description: article.description,
+      date: formatDate(article.publishedAt),
+      thumbnailUrl: article.thumbnail?.url,
+    })),
+    ...interviews.map((article) => ({
+      id: `interview-${article.id}`,
+      href: `/interview/${article.slug}/`,
+      label: 'インタビュー',
+      title: article.title,
+      description: article.description,
+      date: formatDate(article.publishedAt),
+      thumbnailUrl: article.thumbnail?.url,
+    })),
+  ].slice(0, 3)
 
-export default function Home() {
   return (
     <>
       <section className="bg-white py-[72px] md:py-24">
@@ -297,22 +307,16 @@ export default function Home() {
             lead="啓発広報の課題・手法・事例について、定期的に発信しています。"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {knowledgeCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded border border-border bg-white transition-colors duration-200 hover:border-navy"
-              >
-                <div className="flex aspect-[16/9] items-center justify-center rounded-t bg-cream text-sm text-navy">
-                  サムネイル準備中
-                </div>
-                <div className="p-6">
-                  <p className="text-xs font-bold text-mustard">{card.label}</p>
-                  <h3 className="mt-3 text-lg font-bold leading-[1.6] text-navy">
-                    {card.title}
-                  </h3>
-                  <p className="mt-4 text-sm text-[#666666]">{card.date}</p>
-                </div>
-              </article>
+            {articles.map((article) => (
+              <ArticleCard
+                key={article.id}
+                href={article.href}
+                label={article.label}
+                title={article.title}
+                description={article.description}
+                date={article.date}
+                thumbnailUrl={article.thumbnailUrl}
+              />
             ))}
           </div>
           <div className="mt-10 text-center">
