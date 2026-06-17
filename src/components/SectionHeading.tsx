@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react'
+
 type SectionHeadingProps = {
   title: string
-  lead?: string
+  lead?: ReactNode
   align?: 'left' | 'center'
 }
 

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { ArticleCard } from '@/components/ArticleCard'
 import { Container } from '@/components/Container'
@@ -7,18 +8,22 @@ import { formatDate } from '@/lib/date'
 
 const concerns = [
   {
+    image: '/images/concern-signal.png',
     title: '「やっているのに、伝わってる手応えがない」',
     body: '何度も啓発キャンペーンをしてきたが、本当に届いているのか、変化があるのか、よくわからない。',
   },
   {
+    image: '/images/concern-measure.png',
     title: '「成果をどう測ればいいか分からない」',
     body: '広報の効果が見えにくい。社内に説明する材料がなく、次の予算確保にも苦労している。',
   },
   {
+    image: '/images/concern-words.png',
     title: '「社内に説明できる言葉がない」',
     body: '広報活動の意義は感じているが、定量的に語れない。理事会・委員会で「やっていることの価値」を伝えきれない。',
   },
   {
+    image: '/images/concern-target.png',
     title: '「届けたい層に、届かない」',
     body: '特に若年層への啓発が機能していない。SNS活用も検討したいが、何から始めればいいか分からない。',
   },
@@ -26,6 +31,7 @@ const concerns = [
 
 const services = [
   {
+    icon: '/images/support-icon-partner-transparent.png',
     number: '01',
     name: '伴走支援',
     catch: '啓発広報の、根っこから整理する。',
@@ -33,6 +39,7 @@ const services = [
     items: ['現状ヒアリング・課題整理', '成果定義・KPI設計', '効果検証の設計', '年間広報計画の策定'],
   },
   {
+    icon: '/images/support-icon-plan-transparent.png',
     number: '02',
     name: '企画・設計',
     catch: '届くための戦略を、組み立てる。',
@@ -40,6 +47,7 @@ const services = [
     items: ['ターゲット分析・ペルソナ設計', 'アンケート調査・インタビュー', '表現戦略・コンテンツ設計', 'キャンペーン全体設計'],
   },
   {
+    icon: '/images/support-icon-create-transparent.png',
     number: '03',
     name: '制作・運用',
     catch: '伝わるかたちで、つくり、届ける。',
@@ -48,20 +56,68 @@ const services = [
   },
 ]
 
+const aboutStats = [
+  {
+    image: '/images/about-stat-media.png',
+    title: (
+      <>
+        業界団体・公益法人
+        <br />
+        専門メディア
+      </>
+    ),
+    body: (
+      <>
+        専門性の高い知見で
+        <br />
+        広報活動を支援します。
+      </>
+    ),
+  },
+  {
+    image: '/images/about-stat-results.png',
+    title: '500社以上',
+    body: (
+      <>
+        パラパラ漫画ムービー
+        <br />
+        制作実績
+      </>
+    ),
+  },
+  {
+    image: '/images/about-stat-founded.png',
+    title: '2013年創業',
+    body: (
+      <>
+        ストーリーマーケティングを
+        <br />
+        軸に支援を続けています。
+      </>
+    ),
+  },
+]
+
 const reasons = [
   {
+    image: '/images/reason-icon-eye-original.png',
+    imageClassName: 'h-[96px] w-[144px]',
     title: '余白で読み手を引き込む',
     body: '情報を一方的に押し付けず、視聴者自身が想像し、気持ちを乗せながら読み進められます。',
   },
   {
+    image: '/images/reason-icon-comment-original.png',
+    imageClassName: 'h-[96px] w-[144px]',
     title: '重い話を、柔らかく',
     body: '法律・制度・義務に紐づく啓発テーマの堅さを和らげ、「自分にも関係ある話」として受け取ってもらえます。',
   },
   {
+    image: '/images/reason-icon-play-original.png',
     title: '最後まで見たくなる',
     body: 'ストーリー構造を持たせることで、視聴完了率が上がります。家電製品協会様の事例では、一般的な動画広告の3倍を実現しました。',
   },
   {
+    image: '/images/reason-icon-refresh-original.png',
     title: '複数媒体に展開できる',
     body: '1つの作品から、動画版・印刷版・SNS用の短尺版など、複数の媒体に展開できます。',
   },
@@ -116,39 +172,37 @@ export default async function Home() {
 
   return (
     <>
-      <section className="bg-white py-[72px] md:py-24">
+      <section className="overflow-hidden bg-white pb-[44px] pt-[32px] md:pb-12 md:pt-10">
         <Container>
-          <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
-            <div className="text-center md:text-left">
-              <h1 className="font-serif text-[32px] font-bold leading-[1.4] text-navy md:text-[52px]">
-                啓発に、
-                <br />
-                ちゃんと手応えを。
+          <div className="mx-auto max-w-container text-center">
+            <div className="relative z-10">
+              <h1 className="font-serif text-[34px] font-bold leading-[1.35] text-navy md:text-[64px]">
+                <span className="whitespace-nowrap">啓発に、</span>
+                <br className="md:hidden" />
+                <span className="whitespace-nowrap md:ml-5">ちゃんと手応えを。</span>
               </h1>
-              <div className="mx-auto mt-7 h-1 w-24 bg-mustard md:mx-0" />
-              <p className="mt-7 text-[15px] leading-body text-text md:text-lg">
+              <div className="mx-auto mt-7 h-1 w-24 bg-mustard" />
+              <p className="mx-auto mt-7 max-w-[560px] text-[15px] font-bold leading-body text-text md:text-[22px]">
                 業界団体・公益法人の啓発広報を、
-                <br className="hidden md:block" />
+                <br />
                 伝わる形に変える専門チーム
               </p>
-              <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                 <Button href="/contact/">ご相談はこちら →</Button>
                 <Button href="/service/" variant="secondary">
                   資料請求 →
                 </Button>
               </div>
             </div>
-            <div className="mx-auto w-full max-w-sm rounded border border-border bg-cream p-8">
-              <div className="aspect-[4/3] rounded border border-dashed border-navy/30 bg-white p-6">
-                <div className="flex h-full flex-col items-center justify-center rounded border border-mustard/60">
-                  <div className="h-20 w-20 rounded-full border-2 border-navy/50" />
-                  <div className="mt-7 h-2 w-36 bg-mustard/70" />
-                  <div className="mt-4 h-2 w-28 bg-navy/20" />
-                </div>
-              </div>
-              <p className="mt-4 text-center text-xs text-[#666666]">
-                手描き風イラストは仮配置です
-              </p>
+            <div className="relative mx-auto -mt-14 w-[112%] max-w-[1180px] -translate-x-[5%] md:-mt-36 md:w-full md:translate-x-0">
+              <Image
+                src="/images/hero-main.png"
+                alt=""
+                width={1792}
+                height={1024}
+                priority
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </Container>
@@ -161,12 +215,27 @@ export default async function Home() {
             {concerns.map((concern) => (
               <article
                 key={concern.title}
-                className="rounded border border-border border-l-4 border-l-mustard bg-white p-8 transition-colors duration-200 hover:border-navy"
+                className="rounded border border-border border-l-4 border-l-mustard bg-white p-7 transition-colors duration-200 hover:border-navy md:p-8"
               >
-                <h3 className="text-lg font-bold leading-[1.6] text-navy">
-                  {concern.title}
-                </h3>
-                <p className="mt-4 text-[15px] leading-body text-text">{concern.body}</p>
+                <div className="grid gap-6 md:grid-cols-[168px_1fr] md:items-center lg:grid-cols-[184px_1fr]">
+                  <div className="mx-auto flex h-36 w-36 shrink-0 items-center justify-center md:mx-0 md:h-40 md:w-40 lg:h-44 lg:w-44">
+                    <Image
+                      src={concern.image}
+                      alt=""
+                      width={288}
+                      height={288}
+                      loading="eager"
+                      unoptimized
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold leading-[1.6] text-navy md:text-[22px] lg:text-[24px]">
+                      {concern.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] leading-body text-text">{concern.body}</p>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -183,11 +252,28 @@ export default async function Home() {
             {services.map((service) => (
               <article
                 key={service.name}
-                className="rounded border border-border bg-white transition-colors duration-200 hover:border-navy"
+                className="overflow-hidden rounded border border-border bg-white transition-colors duration-200 hover:border-navy"
               >
-                <div className="bg-navy px-6 py-5 text-white">
-                  <p className="font-en text-sm font-bold text-mustard">{service.number}</p>
-                  <h3 className="mt-2 font-serif text-2xl font-bold">{service.name}</h3>
+                <div className="flex min-h-[132px] items-center justify-between gap-5 bg-navy px-6 py-6 text-white">
+                  <div>
+                    <p className="font-en text-base font-bold text-mustard">
+                      {service.number}
+                    </p>
+                    <h3 className="mt-3 font-serif text-2xl font-bold md:text-[28px]">
+                      {service.name}
+                    </h3>
+                  </div>
+                  <div className="flex h-24 w-24 shrink-0 items-center justify-center md:h-28 md:w-28">
+                    <Image
+                      src={service.icon}
+                      alt=""
+                      width={240}
+                      height={240}
+                      loading="eager"
+                      unoptimized
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="p-7">
                   <p className="font-serif text-lg font-bold leading-[1.6] text-navy">
@@ -217,7 +303,13 @@ export default async function Home() {
         <Container>
           <SectionHeading
             title="事例"
-            lead="業界団体の啓発広報という共通課題に対し、複数の表現手法と効果測定を組み合わせた継続的な伴走支援を提供しています。"
+            lead={
+              <>
+                業界団体の啓発広報という共通課題に対し、
+                <br className="hidden md:block" />
+                複数の表現手法と効果測定を組み合わせた継続的な伴走支援を提供しています。
+              </>
+            }
           />
           <article className="mt-12 grid gap-8 rounded border border-border bg-white p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8">
             <div className="flex aspect-video items-center justify-center rounded border border-dashed border-navy/30 bg-navy-50 text-center text-sm leading-body text-navy">
@@ -228,7 +320,9 @@ export default async function Home() {
             <div>
               <p className="text-sm font-bold text-mustard">一般財団法人 家電製品協会様</p>
               <h3 className="mt-3 font-serif text-2xl font-bold leading-[1.5] text-navy">
-                若年層向けの家電リサイクル啓発
+                若年層向けの
+                <br className="hidden md:block" />
+                家電リサイクル啓発
               </h3>
               <div className="mt-6 inline-flex rounded bg-mustard px-5 py-3 font-bold text-white">
                 視聴完了率3倍
@@ -238,7 +332,11 @@ export default async function Home() {
                 「数字だけでなく、若い世代に『自分ごと』として届いている実感がありました。」
               </blockquote>
               <div className="mt-7">
-                <Button href="/case/kaden-seihin-kyokai/" variant="secondary">
+                <Button
+                  href="/case/kaden-seihin-kyokai/"
+                  variant="secondary"
+                  className="min-h-14 px-9 py-4 text-lg"
+                >
                   事例の詳細を読む →
                 </Button>
               </div>
@@ -256,8 +354,20 @@ export default async function Home() {
                 key={reason.title}
                 className="rounded border border-border bg-white p-7 transition-colors duration-200 hover:border-navy"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-mustard-50 font-en text-sm font-bold text-mustard">
-                  {String(index + 1).padStart(2, '0')}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded bg-mustard-50 font-en text-sm font-bold text-mustard">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-visible">
+                    <Image
+                      src={reason.image}
+                      alt=""
+                      width={72}
+                      height={72}
+                      unoptimized
+                      className={`${reason.imageClassName ?? 'h-[72px] w-[72px]'} max-w-none object-contain`}
+                    />
+                  </div>
                 </div>
                 <h3 className="mt-5 text-lg font-bold leading-[1.6] text-navy">
                   {reason.title}
@@ -329,10 +439,22 @@ export default async function Home() {
 
       <section className="bg-cream py-[60px] md:py-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-            <SectionHeading title="啓発広報ラボについて" align="left" />
-            <div className="rounded border border-border bg-white p-8">
-              <div className="space-y-5 text-[15px] leading-body text-text md:text-base">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.45fr] lg:items-stretch">
+            <div className="relative overflow-hidden pb-2 lg:pr-4">
+              <SectionHeading title="啓発広報ラボについて" align="left" />
+              <div className="mt-8">
+                <Image
+                  src="/images/about-flow-visual-transparent.png"
+                  alt="想い、伝わる、共感、行動、文化の流れ"
+                  width={1024}
+                  height={1536}
+                  unoptimized
+                  className="mx-auto h-auto w-full max-w-[430px] lg:max-w-none"
+                />
+              </div>
+            </div>
+            <div className="rounded bg-white p-7 shadow-sm md:p-10 lg:p-12">
+              <div className="space-y-6 text-[15px] font-bold leading-body text-text md:text-[17px]">
                 <p>
                   啓発広報ラボは、業界団体・公益法人・一般社団法人の啓発広報を支援する専門メディアです。株式会社アトムストーリーが運営しています。
                 </p>
@@ -343,11 +465,41 @@ export default async function Home() {
                   「啓発活動の伝わってる実感がない」を解くため、業界団体・公益法人の広報担当者の方々に伴走し、企画から制作・運用・効果検証まで一貫してサポートします。
                 </p>
               </div>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/about/" variant="secondary">
+              <div className="mt-10 grid gap-6 border-t border-border pt-8 md:grid-cols-3">
+                {aboutStats.map((stat, index) => (
+                  <div
+                    key={String(stat.title)}
+                    className={index === 0 ? 'text-center' : 'text-center md:border-l md:border-border'}
+                  >
+                    <Image
+                      src={stat.image}
+                      alt=""
+                      width={220}
+                      height={220}
+                      unoptimized
+                      className="mx-auto h-20 w-20 object-contain md:h-[92px] md:w-[92px]"
+                    />
+                    <p className="mt-4 font-serif text-[21px] font-bold leading-[1.45] text-navy md:text-[23px]">
+                      {stat.title}
+                    </p>
+                    <p className="mt-3 text-sm font-bold leading-body text-text md:text-[15px]">
+                      {stat.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <Button
+                  href="/about/"
+                  variant="secondary"
+                  className="min-h-14 w-full px-8 py-4 text-lg"
+                >
                   会社概要を見る →
                 </Button>
-                <Button href="/message/" variant="secondary">
+                <Button
+                  href="/message/"
+                  className="min-h-14 w-full px-8 py-4 text-lg"
+                >
                   代表メッセージを読む →
                 </Button>
               </div>
