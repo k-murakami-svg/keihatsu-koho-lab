@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { FAQ } from '@/components/FAQ'
@@ -83,26 +84,61 @@ export default function AboutPage() {
 
       <section className="bg-white py-[60px] md:py-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-            <SectionHeading title="ラボの位置づけ" align="left" />
-            <div className="space-y-8">
-              <article className="rounded border border-border bg-white p-8">
-                <h2 className="font-serif text-2xl font-bold text-navy">啓発広報ラボとは</h2>
-                <p className="mt-5 text-[15px] leading-body text-text md:text-base">
-                  法律・自主規制・業界の使命に基づいた啓発活動を行う業界団体・公益法人の広報担当者の方々を主な対象とし、企画から制作・運用・効果検証まで一貫して伴走支援しています。
-                </p>
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.38fr] lg:items-start">
+            <div>
+              <SectionHeading title="ラボの位置づけ" align="left" />
+              <div className="mt-8 lg:mt-10">
+                <Image
+                  src="/images/about-position-flow.png"
+                  alt="想いを整理する、伝わる形にする、共感を生み出す、行動につなげる、文化をつくる流れ"
+                  width={1024}
+                  height={1024}
+                  className="mx-auto w-full max-w-[540px] object-contain lg:mx-0"
+                />
+              </div>
+            </div>
+            <div className="space-y-6 lg:pt-[74px]">
+              <article className="rounded border border-border bg-white p-6 md:p-8">
+                <div className="grid gap-5 md:grid-cols-[92px_1fr] md:items-start">
+                  <Image
+                    src="/images/about-card-lab.png"
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="h-20 w-20 rounded-full object-contain md:h-[92px] md:w-[92px]"
+                  />
+                  <div>
+                    <h2 className="font-serif text-2xl font-bold text-navy">
+                      啓発広報ラボとは
+                    </h2>
+                    <p className="mt-5 text-[15px] leading-body text-text md:text-base">
+                      法律・自主規制・業界の使命に基づいた啓発活動を行う業界団体・公益法人の広報担当者の方々を主な対象とし、企画から制作・運用・効果検証まで一貫して伴走支援しています。
+                    </p>
+                  </div>
+                </div>
               </article>
-              <article className="rounded border border-border bg-cream p-8">
-                <h2 className="font-serif text-2xl font-bold text-navy">
-                  なぜラボを立ち上げたか
-                </h2>
-                <div className="mt-5 space-y-5 text-[15px] leading-body text-text md:text-base">
-                  <p>
-                    業界団体・公益法人の啓発広報は、社会にとって重要な活動です。しかし、担当者の方々から「やっているのに、伝わってる実感がない」「成果をどう測ればいいか分からない」という声を多く伺ってきました。
-                  </p>
-                  <p>
-                    私たちは、500社以上のパラパラ漫画ムービー制作で培ったストーリーマーケティングの知見を活かし、業界団体・公益法人の啓発広報に特化したチームとして、「伝わった実感」を取り戻すための活動を展開しています。
-                  </p>
+              <article className="rounded border border-border bg-cream p-6 md:p-8">
+                <div className="grid gap-5 md:grid-cols-[92px_1fr] md:items-start">
+                  <Image
+                    src="/images/about-card-reason.png"
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="h-20 w-20 rounded-full object-contain md:h-[92px] md:w-[92px]"
+                  />
+                  <div>
+                    <h2 className="font-serif text-2xl font-bold text-navy">
+                      なぜラボを立ち上げたか
+                    </h2>
+                    <div className="mt-5 space-y-5 text-[15px] leading-body text-text md:text-base">
+                      <p>
+                        業界団体・公益法人の啓発広報は、社会にとって重要な活動です。しかし、担当者の方々から「やっているのに、伝わってる実感がない」「成果をどう測ればいいか分からない」という声を多く伺ってきました。
+                      </p>
+                      <p>
+                        私たちは、500社以上のパラパラ漫画ムービー制作で培ったストーリーマーケティングの知見を活かし、業界団体・公益法人の啓発広報に特化したチームとして、「伝わった実感」を取り戻すための活動を展開しています。
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </article>
             </div>
