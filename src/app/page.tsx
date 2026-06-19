@@ -61,9 +61,11 @@ const aboutStats = [
     image: '/images/about-stat-media.png',
     title: (
       <>
-        業界団体・公益法人
+        業界団体
         <br />
-        専門メディア
+        公益財団法人・一般社団法人の
+        <br />
+        啓発広報を支援する専門チーム
       </>
     ),
     body: (

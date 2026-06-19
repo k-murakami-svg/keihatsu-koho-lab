@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
 
 const navItems = [
@@ -13,8 +14,20 @@ export function Header() {
   return (
     <header className="bg-navy text-white">
       <Container className="flex min-h-[70px] items-center justify-between gap-6">
-        <Link href="/" className="font-serif text-xl font-bold tracking-normal hover:text-white">
-          啓発広報ラボ
+        <Link
+          href="/"
+          className="flex items-center gap-3 font-serif text-xl font-bold tracking-[0.08em] hover:text-white"
+          aria-label="啓発広報ラボ トップページ"
+        >
+          <Image
+            src="/images/logo-mark-header.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9"
+            aria-hidden="true"
+          />
+          <span>啓発広報ラボ</span>
         </Link>
         <nav aria-label="グローバルナビゲーション" className="hidden md:block">
           <ul className="flex items-center gap-7 text-sm font-bold">
