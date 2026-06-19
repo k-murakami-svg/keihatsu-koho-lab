@@ -84,16 +84,16 @@ export default function AboutPage() {
 
       <section className="bg-white py-[60px] md:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.38fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-start">
             <div>
               <SectionHeading title="ラボの位置づけ" align="left" />
-              <div className="mt-8 lg:mt-10">
+              <div className="mt-5 lg:mt-6">
                 <Image
                   src="/images/about-position-flow.png"
                   alt="想いを整理する、伝わる形にする、共感を生み出す、行動につなげる、文化をつくる流れ"
                   width={1024}
                   height={1024}
-                  className="mx-auto w-full max-w-[540px] object-contain lg:mx-0"
+                  className="mx-auto w-full max-w-[620px] object-contain lg:-ml-5 lg:max-w-[660px]"
                 />
               </div>
             </div>
