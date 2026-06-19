@@ -30,7 +30,9 @@ export default async function KnowledgePage() {
             </h1>
             <div className="mx-auto mt-6 h-1 w-24 bg-mustard" />
             <p className="mx-auto mt-7 max-w-3xl text-[15px] leading-body text-text md:text-base">
-              啓発広報の課題・手法・事例について、定期的に発信しています。業界団体・公益法人の広報担当者の方々の参考になれば幸いです。
+              啓発広報の課題・手法・事例について、定期的に発信しています。
+              <br className="hidden md:block" />
+              業界団体・公益法人の広報担当者の方々の参考になれば幸いです。
             </p>
           </div>
         </Container>

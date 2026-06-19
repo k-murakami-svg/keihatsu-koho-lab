@@ -23,7 +23,9 @@ export default function CasePage() {
             </h1>
             <div className="mx-auto mt-6 h-1 w-24 bg-mustard" />
             <p className="mx-auto mt-7 max-w-3xl text-[15px] leading-body text-text md:text-base">
-              業界団体の啓発広報という共通課題に対し、複数の表現手法と効果測定を組み合わせた継続的な伴走支援を提供しています。
+              業界団体の啓発広報という共通課題に対し、
+              <br className="hidden md:block" />
+              複数の表現手法と効果測定を組み合わせた継続的な伴走支援を提供しています。
             </p>
           </div>
         </Container>
