@@ -17,7 +17,9 @@ export function Footer() {
           <div>
             <p className="font-serif text-xl font-bold">啓発広報ラボ</p>
             <p className="mt-4 text-sm leading-body text-white/80">
-              業界団体・公益法人の啓発広報を、伝わる形に変える専門チーム。
+              業界団体・公益法人の啓発広報を、
+              <br />
+              伝わる形に変える専門チーム。
             </p>
           </div>
           <nav aria-label="フッターナビゲーション">
