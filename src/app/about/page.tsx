@@ -22,6 +22,8 @@ const company = [
   ['姉妹サイト', 'https://parapara-manga.com/'],
 ]
 
+const isExternalUrl = (value: string) => value.startsWith('https://')
+
 const businesses = [
   'パラパラ漫画ムービー制作',
   'ストーリーマーケティング支援',
@@ -186,7 +188,20 @@ export default function AboutPage() {
             {company.map(([label, value]) => (
               <div key={label} className="grid border-b border-border last:border-0 md:grid-cols-[180px_1fr]">
                 <dt className="bg-cream px-5 py-4 text-sm font-bold text-navy">{label}</dt>
-                <dd className="px-5 py-4 text-[15px] leading-body text-text">{value}</dd>
+                <dd className="px-5 py-4 text-[15px] leading-body text-text">
+                  {isExternalUrl(value) ? (
+                    <a
+                      href={value}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-navy underline decoration-mustard/50 underline-offset-4 transition-colors hover:text-mustard"
+                    >
+                      {value}
+                    </a>
+                  ) : (
+                    value
+                  )}
+                </dd>
               </div>
             ))}
           </div>
