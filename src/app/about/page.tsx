@@ -76,7 +76,9 @@ export default function AboutPage() {
             </h1>
             <div className="mx-auto mt-6 h-1 w-24 bg-mustard" />
             <p className="mx-auto mt-7 max-w-3xl text-[15px] leading-body text-text md:text-base">
-              啓発広報ラボは、業界団体・公益法人・一般社団法人の啓発広報を支援する専門メディアです。株式会社アトムストーリーが運営しています。
+              啓発広報ラボは、業界団体・公益法人・一般社団法人の啓発広報を支援する専門メディアです。
+              <br />
+              株式会社アトムストーリーが運営しています。
             </p>
           </div>
         </Container>
