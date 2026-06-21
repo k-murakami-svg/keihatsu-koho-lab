@@ -42,9 +42,9 @@ const approach = [
 ]
 
 const comments = [
-  '数字だけでなく、若い世代に「自分ごと」として届いている実感がありました。',
-  '啓発広報って、効果が見えにくい領域ですが、ちゃんと向き合ってくれるパートナーに出会えた感覚があります。',
-  '「作って終わり」ではなく、運用・効果検証まで一貫してサポートしてもらえる安心感がありました。',
+  '私たちの課題に最も寄り添って、深く理解し、具体的なアイデアをくれました。',
+  '私たちが持っていない視点を加えてくれたことで、より深い共感を呼ぶコンテンツができあがりました。',
+  '以前は効果測定の難しい手段が中心でしたが、今はSNSを通じて毎月数値で確認でき、きちんと伝わっている実感があります。',
 ]
 
 export default function KadenSeihinKyokaiCasePage() {
@@ -191,7 +191,7 @@ export default function KadenSeihinKyokaiCasePage() {
                   パラパラ漫画動画の視聴完了率は、一般的な動画広告の3倍を実現。特に若年層からの反応が大きく、Xでのキャンペーン参加者は当初想定の2倍を超えました。
                 </p>
                 <p>
-                  家電製品協会様の三善様からは、「数字だけでなく、若い世代に『自分ごと』として届いている実感がありました」というコメントをいただきました。
+                  家電製品協会様からは、「SNSを通じて毎月数値で確認でき、きちんと伝わっている実感があります」というコメントをいただきました。
                 </p>
               </div>
             </div>
@@ -201,7 +201,7 @@ export default function KadenSeihinKyokaiCasePage() {
 
       <section className="bg-white py-[60px] md:py-20">
         <Container>
-          <SectionHeading title="クライアントの声" lead="三善 徹 様（家電製品協会）" />
+          <SectionHeading title="クライアントの声" lead="一般財団法人 家電製品協会様の事例" />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {comments.map((comment) => (
               <blockquote

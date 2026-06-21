@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 
 const navItems = [
   { href: '/service/', label: 'サービス' },
-  { href: '/case/', label: '事例' },
+  { href: '/case/kaden-seihin-kyokai/', label: '事例' },
   { href: '/knowledge/', label: 'ナレッジ' },
   { href: '/about/', label: '会社情報' },
   { href: '/contact/', label: 'お問い合わせ' },
