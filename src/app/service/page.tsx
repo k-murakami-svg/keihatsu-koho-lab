@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { SectionHeading } from '@/components/SectionHeading'
 import { JsonLd, siteUrl } from '@/lib/jsonLd'
 
 export const metadata: Metadata = {
@@ -72,16 +72,51 @@ const supportMenus = [
 
 const mangaReasons = [
   {
-    title: '余白で読み手を引き込む',
-    body: 'パラパラ漫画には、ナレーションやBGMの「余白」があります。情報を一方的に押し付けず、視聴者自身が想像し、気持ちを乗せながら読み進められます。',
+    icon: '/images/service/manga-reason-empathy.png',
+    title: '共感できる',
+    body: '主人公の悩みや葛藤を描くことで、「もし自分だったら」と自然に感情移入できます。',
   },
   {
-    title: '重い話を、柔らかく',
-    body: '法律・制度・義務に紐づく啓発テーマは、どうしても堅くなりがち。手描きの温度感が、その堅さを和らげ、「自分にも関係ある話」として受け取ってもらえます。',
+    icon: '/images/service/manga-reason-continuation.png',
+    title: '続きが気になる',
+    body: 'ストーリーには「この後どうなるのだろう」という力があり、最後まで見てもらいやすくなります。',
   },
   {
-    title: '最後まで見たくなる',
-    body: 'ストーリー構造を持たせることで、視聴完了率が上がります。家電製品協会様の事例では、一般的な動画広告の3倍の視聴完了率を実現しました。',
+    icon: '/images/service/manga-reason-personal.png',
+    title: '自分ごと化しやすい',
+    body: 'シンプルな表現だからこそ、視聴者自身が想像しやすく、自分の問題として受け取れます。',
+  },
+  {
+    icon: '/images/service/manga-reason-insight.png',
+    title: '気づきが生まれる',
+    body: '押し付けるのではなく、ストーリーを通じて気づきを促し、考えるきっかけをつくります。',
+  },
+]
+
+const mangaPanels = [
+  {
+    src: '/images/service/manga-panel-insight.png',
+    alt: 'リサイクル工場に運ばれる家電を描いたパラパラ漫画の場面',
+    width: 1324,
+    height: 748,
+  },
+  {
+    src: '/images/service/manga-panel-empathy.png',
+    alt: 'テレビを見る女性が家族の場面を想像するパラパラ漫画の場面',
+    width: 1310,
+    height: 736,
+  },
+  {
+    src: '/images/service/manga-panel-personal.png',
+    alt: '請求書を渡されて困る人物を描いたパラパラ漫画の場面',
+    width: 1298,
+    height: 732,
+  },
+  {
+    src: '/images/service/manga-panel-continuation.png',
+    alt: '電話で無料回収の案内を受ける人物を描いたパラパラ漫画の場面',
+    width: 1294,
+    height: 743,
   },
 ]
 
@@ -188,30 +223,67 @@ export default function ServicePage() {
 
       <section className="bg-cream py-[60px] md:py-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div>
-              <SectionHeading
-                title="手描きアニメーションのパラパラ漫画"
-                align="left"
-                lead="啓発広報ラボの独自手法として、手描きパラパラ漫画動画を中心に据えています。500社以上の制作実績に基づく、独自の表現手法です。"
-              />
+          <div className="mx-auto max-w-[1180px]">
+            <div className="text-center">
+              <h2 className="font-serif text-[30px] font-bold leading-[1.35] text-navy md:text-[44px]">
+                なぜ、パラパラ漫画は
+                <br className="md:hidden" />
+                人の心に届くのか
+              </h2>
+              <p className="mt-5 text-[15px] font-bold leading-body text-text md:text-xl">
+                ストーリーで伝えるから、共感が生まれ、自分ごととして受け取られ、行動につながります。
+              </p>
+            </div>
+
+            <div className="mt-10 overflow-hidden rounded border border-border bg-white">
+              {mangaReasons.map((reason, index) => (
+                <article
+                  key={reason.title}
+                  className="grid border-b border-border last:border-b-0 lg:grid-cols-[0.95fr_1.05fr]"
+                >
+                  <div className="border-b border-border bg-white lg:border-b-0 lg:border-r">
+                    <Image
+                      src={mangaPanels[index].src}
+                      alt={mangaPanels[index].alt}
+                      width={mangaPanels[index].width}
+                      height={mangaPanels[index].height}
+                      className="aspect-[16/9] h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="grid gap-5 p-6 sm:grid-cols-[112px_1fr] sm:items-center md:p-8 lg:p-10">
+                    <Image
+                      src={reason.icon}
+                      alt=""
+                      width={220}
+                      height={220}
+                      className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+                    />
+                    <div>
+                      <h3 className="font-serif text-2xl font-bold leading-[1.45] text-navy md:text-[30px]">
+                        {reason.title}
+                      </h3>
+                      <p className="mt-4 text-[15px] leading-body text-text md:text-base">
+                        {reason.body}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-8 max-w-5xl text-center">
+              <p className="font-serif text-[24px] font-bold leading-[1.55] text-navy md:text-[34px]">
+                パラパラ漫画は、難しい内容や伝えにくいテーマも、
+                <br className="hidden md:block" />
+                ストーリーを通じて
+                <span className="text-mustard">「自分ごと」</span>
+                として受け止めてもらえる
+                <span className="whitespace-nowrap">表現手法です。</span>
+              </p>
               <div className="mt-8">
                 <Button href="https://parapara-manga.com/" variant="secondary">
                   パラパラ漫画の制作実績を見る →
                 </Button>
-              </div>
-            </div>
-            <div className="rounded border border-border bg-white p-8">
-              <div className="space-y-6">
-                {mangaReasons.map((reason, index) => (
-                  <article key={reason.title} className="border-b border-border pb-6 last:border-0 last:pb-0">
-                    <p className="font-en text-sm font-bold text-mustard">
-                      Reason {String(index + 1).padStart(2, '0')}
-                    </p>
-                    <h3 className="mt-2 text-xl font-bold text-navy">{reason.title}</h3>
-                    <p className="mt-3 text-[15px] leading-body text-text">{reason.body}</p>
-                  </article>
-                ))}
               </div>
             </div>
           </div>
