@@ -312,11 +312,14 @@ export default async function Home() {
             }
           />
           <article className="mt-12 grid gap-8 rounded border border-border bg-white p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8">
-            <div className="flex aspect-video items-center justify-center rounded border border-dashed border-navy/30 bg-navy-50 text-center text-sm leading-body text-navy">
-              家電製品協会様の
-              <br />
-              パラパラ漫画動画を配置予定
-            </div>
+            <Image
+              src="/images/case/kaden-seihin-kyokai-case-thumbnail.jpg"
+              alt=""
+              width={1200}
+              height={630}
+              sizes="(min-width: 768px) 52vw, 100vw"
+              className="aspect-video w-full rounded object-cover"
+            />
             <div>
               <p className="text-sm font-bold text-mustard">一般財団法人 家電製品協会様</p>
               <h3 className="mt-3 font-serif text-2xl font-bold leading-[1.5] text-navy">

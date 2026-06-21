@@ -46,7 +46,7 @@ export default async function KnowledgeDetailPage({ params }: PageProps) {
       name: '株式会社アトムストーリー',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo.png`,
+        url: `${siteUrl}/favicon.svg`,
       },
     },
     mainEntityOfPage: `${siteUrl}/knowledge/${article.slug}/`,

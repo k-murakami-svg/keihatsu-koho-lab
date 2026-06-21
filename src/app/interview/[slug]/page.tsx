@@ -45,7 +45,7 @@ export default async function InterviewDetailPage({ params }: PageProps) {
       name: '株式会社アトムストーリー',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo.png`,
+        url: `${siteUrl}/favicon.svg`,
       },
     },
     mainEntityOfPage: `${siteUrl}/interview/${article.slug}/`,

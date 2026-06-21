@@ -6,7 +6,7 @@ export const organizationJsonLd = {
   name: '株式会社アトムストーリー',
   alternateName: '啓発広報ラボ',
   url: `${siteUrl}/`,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/favicon.svg`,
   description:
     '業界団体・公益法人・一般社団法人の啓発広報を支援する専門チーム。「啓発広報ラボ」を運営。',
   foundingDate: '2013-06',

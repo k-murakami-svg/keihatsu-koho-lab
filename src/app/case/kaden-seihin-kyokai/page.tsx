@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -54,7 +55,7 @@ export default function KadenSeihinKyokaiCasePage() {
     alternativeHeadline: '一般財団法人 家電製品協会様の事例',
     description:
       '家電リサイクル法を若年層に届けるため、パラパラ漫画動画とSNS広告・Xプレゼントキャンペーンを組み合わせた啓発施策を実施。',
-    image: `${siteUrl}/images/case/kaden-seihin-kyokai-thumbnail.jpg`,
+    image: `${siteUrl}/images/case/kaden-seihin-kyokai-case-thumbnail.jpg`,
     datePublished: '2026-06-01',
     author: {
       '@type': 'Organization',
@@ -65,7 +66,7 @@ export default function KadenSeihinKyokaiCasePage() {
       name: '株式会社アトムストーリー',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo.png`,
+        url: `${siteUrl}/favicon.svg`,
       },
     },
     mainEntityOfPage: `${siteUrl}/case/kaden-seihin-kyokai/`,
@@ -88,9 +89,15 @@ export default function KadenSeihinKyokaiCasePage() {
               Case Study
             </p>
             <h1 className="mt-4 font-serif text-[30px] font-bold leading-[1.4] text-navy md:text-[44px]">
-              視聴完了率3倍を実現した、
-              <br className="hidden md:block" />
-              若年層向け啓発広報の取り組み
+              視聴完了率3倍を
+              <br className="md:hidden" />
+              実現した、
+              <br />
+              若年層向け
+              <br className="md:hidden" />
+              啓発広報の
+              <br className="md:hidden" />
+              取り組み
             </h1>
             <div className="mx-auto mt-6 h-1 w-24 bg-mustard" />
             <p className="mt-7 text-[15px] font-bold leading-body text-text md:text-lg">
@@ -102,12 +109,16 @@ export default function KadenSeihinKyokaiCasePage() {
 
       <section className="bg-white py-[60px] md:py-20">
         <Container>
-          <div className="grid gap-8 md:grid-cols-[1.08fr_0.92fr]">
-            <div className="flex aspect-video items-center justify-center rounded border border-dashed border-navy/30 bg-navy-50 text-center text-sm leading-body text-navy">
-              家電製品協会様の動画・サムネイルを
-              <br />
-              ここに配置予定
-            </div>
+          <div className="grid gap-8 md:grid-cols-[1.08fr_0.92fr] md:items-start">
+            <Image
+              src="/images/case/kaden-seihin-kyokai-case-thumbnail.jpg"
+              alt=""
+              width={1200}
+              height={630}
+              sizes="(min-width: 768px) 52vw, 100vw"
+              priority
+              className="aspect-video w-full rounded object-cover"
+            />
             <div className="rounded border border-border bg-white">
               {overview.map(([label, value]) => (
                 <div

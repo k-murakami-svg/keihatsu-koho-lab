@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -35,9 +36,14 @@ export default function CasePage() {
         <Container>
           <SectionHeading title="掲載中の事例" align="left" />
           <article className="mt-10 grid gap-8 rounded border border-border bg-white p-6 md:grid-cols-[1fr_1.1fr] md:p-8">
-            <div className="flex aspect-video items-center justify-center rounded border border-dashed border-navy/30 bg-cream text-center text-sm text-navy">
-              動画・サムネイル準備中
-            </div>
+            <Image
+              src="/images/case/kaden-seihin-kyokai-case-thumbnail.jpg"
+              alt=""
+              width={1200}
+              height={630}
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="aspect-video w-full rounded object-cover"
+            />
             <div>
               <p className="text-sm font-bold text-mustard">一般財団法人 家電製品協会様</p>
               <h2 className="mt-3 font-serif text-2xl font-bold leading-[1.5] text-navy">

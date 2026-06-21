@@ -36,6 +36,36 @@ export type InterviewArticle = {
   updatedAt: string
 }
 
+export type CaseStudyComment = {
+  fieldId?: string
+  comment?: string
+  speaker?: string
+  name?: string
+}
+
+export type CaseStudyArticle = {
+  id: string
+  title: string
+  slug: string
+  description: string
+  clientName: string
+  clientType?: string
+  industry?: string
+  legalContext?: string
+  period?: string
+  targetAudience?: string
+  videoUrl?: string
+  thumbnail?: MicroCMSImage
+  background?: string
+  approach?: string
+  result?: string
+  keyMetric?: string
+  clientComments?: CaseStudyComment[]
+  interviewSlug?: string
+  publishedAt: string
+  updatedAt: string
+}
+
 export function hasMicroCMSConfig() {
   return Boolean(process.env.MICROCMS_SERVICE_DOMAIN && process.env.MICROCMS_API_KEY)
 }
