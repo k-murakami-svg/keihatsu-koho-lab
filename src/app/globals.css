@@ -50,3 +50,58 @@ a:hover {
   background: #F0E2A8;
   color: var(--color-navy);
 }
+
+.article-content {
+  line-height: 1.9;
+}
+
+.article-content > * + * {
+  margin-top: 1.25rem;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: var(--color-navy);
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.article-content h2 {
+  margin-top: 3rem;
+  font-size: 1.75rem;
+}
+
+.article-content h3 {
+  margin-top: 2.5rem;
+  font-size: 1.45rem;
+}
+
+.article-content h4 {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+}
+
+.article-content p:empty {
+  display: none;
+}
+
+.article-content strong {
+  font-weight: 700;
+}
+
+.article-content a {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.article-content figure {
+  margin: 2.5rem 0;
+}
+
+.article-content img {
+  height: auto;
+  max-width: 100%;
+}

@@ -91,7 +91,7 @@ export default async function KnowledgeDetailPage({ params }: PageProps) {
               </div>
             )}
             <div
-              className="prose prose-neutral max-w-none text-[15px] leading-body text-text prose-headings:font-serif prose-headings:text-navy prose-a:text-navy md:text-base"
+              className="article-content max-w-none text-[15px] leading-body text-text md:text-base"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
             <div className="mt-12 rounded border border-border bg-cream p-8 text-center">

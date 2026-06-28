@@ -11,3 +11,5 @@ yarn-error.log*
 tsconfig.tsbuildinfo
 dist
 coverage
+.vercel
+.env*
