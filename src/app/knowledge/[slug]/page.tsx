@@ -11,6 +11,8 @@ type PageProps = {
   params: { slug: string }
 }
 
+export const revalidate = 60
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const article = await getKnowledgeBySlug(params.slug)
   if (!article) return {}

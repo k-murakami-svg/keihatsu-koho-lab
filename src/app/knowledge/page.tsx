@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     '啓発広報の課題・手法・事例を発信する専門メディア。業界団体・公益法人・一般社団法人の広報担当者の方々と、啓発広報の「伝わる」を一緒に考えます。',
 }
 
+export const revalidate = 60
+
 export default async function KnowledgePage() {
   const [knowledge, interviews] = await Promise.all([
     getKnowledgeList(9),

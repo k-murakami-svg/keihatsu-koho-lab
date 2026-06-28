@@ -6,6 +6,8 @@ import { SectionHeading } from '@/components/SectionHeading'
 import { getCategoryName, getInterviewList, getKnowledgeList } from '@/lib/api'
 import { formatDate } from '@/lib/date'
 
+export const revalidate = 60
+
 const concerns = [
   {
     image: '/images/concern-signal.png',
