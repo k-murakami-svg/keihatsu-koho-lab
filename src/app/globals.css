@@ -105,3 +105,54 @@ a:hover {
   height: auto;
   max-width: 100%;
 }
+
+.article-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+}
+
+.article-content tbody {
+  display: table;
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid var(--color-border);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-content th {
+  background: var(--color-cream);
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.article-content th h2,
+.article-content th h3,
+.article-content th h4,
+.article-content th p,
+.article-content td h2,
+.article-content td h3,
+.article-content td h4,
+.article-content td p {
+  margin: 0;
+}
+
+.article-content th h2,
+.article-content th h3,
+.article-content th h4 {
+  font-size: 1.05rem;
+}
+
+.article-content td p + p {
+  margin-top: 0.5rem;
+}
