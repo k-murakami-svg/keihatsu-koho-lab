@@ -6,9 +6,9 @@ import { SectionHeading } from '@/components/SectionHeading'
 import { JsonLd, siteUrl } from '@/lib/jsonLd'
 
 export const metadata: Metadata = {
-  title: '事例：家電製品協会様 視聴完了率3倍 | 啓発広報ラボ',
+  title: '事例：家電製品協会様 若年層の認知度が前年比で向上 | 啓発広報ラボ',
   description:
-    '一般財団法人 家電製品協会様の啓発広報の取り組み事例。家電リサイクル法を若年層に届けるため、パラパラ漫画動画とSNS広告を組み合わせ、視聴完了率3倍を実現しました。',
+    '一般財団法人 家電製品協会様の啓発広報の取り組み事例。家電リサイクル法を若年層に届けるため、パラパラ漫画ムービーと静止画漫画を制作し、SNS広告配信と効果検証を継続しています。',
   openGraph: {
     type: 'article',
   },
@@ -29,15 +29,15 @@ const approach = [
   },
   {
     title: 'コンテンツ制作',
-    body: 'パラパラ漫画動画の制作。手描きの温度感を活かし、家電リサイクルの「自分ごと」化を促進。1分尺のショート版と、3分の本編版を制作しました。',
+    body: 'パラパラ漫画ムービーと静止画漫画を制作。手描きの温度感を活かし、家電リサイクル法を「自分ごと」として受け取れる伝え方を追求しました。',
   },
   {
     title: '運用・配信',
-    body: 'Xでのプレゼントキャンペーン展開。動画をフックに、若年層への認知拡大と理解促進を狙いました。SNS広告の配信設計、効果測定までを伴走支援。',
+    body: '制作したコンテンツをSNSで広告配信。毎月の数値レポートと認知度調査で反響を可視化し、「どこに重点的に啓発すべきか」を継続的に検証しています。',
   },
   {
     title: '二次展開',
-    body: '動画コンテンツを、印刷物・公式サイト・他SNSへ二次展開。コンテンツ資産として、複数チャネルで活用しました。',
+    body: 'デジタルサイネージや科学技術館など、複数の場所・チャネルへ展開。関連メーカーへの共有も含め、コンテンツを資産として活用しています。',
   },
 ]
 
@@ -51,10 +51,10 @@ export default function KadenSeihinKyokaiCasePage() {
   const caseJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: '視聴完了率3倍を実現した、若年層向け啓発広報の取り組み',
+    headline: '若年層の認知度が前年比で向上。家電リサイクル法を"自分ごと"に変える啓発の取り組み',
     alternativeHeadline: '一般財団法人 家電製品協会様の事例',
     description:
-      '家電リサイクル法を若年層に届けるため、パラパラ漫画動画とSNS広告・Xプレゼントキャンペーンを組み合わせた啓発施策を実施。',
+      '家電リサイクル法を若年層に届けるため、パラパラ漫画ムービーと静止画漫画を制作し、SNS広告配信と効果検証を継続している啓発施策。',
     image: `${siteUrl}/images/case/kaden-seihin-kyokai-case-thumbnail.jpg`,
     datePublished: '2026-06-01',
     author: {
@@ -89,13 +89,15 @@ export default function KadenSeihinKyokaiCasePage() {
               Case Study
             </p>
             <h1 className="mt-4 font-serif text-[30px] font-bold leading-[1.4] text-navy md:text-[44px]">
-              視聴完了率3倍を
+              若年層の認知度が
               <br className="md:hidden" />
-              実現した、
+              前年比で向上。
               <br />
-              若年層向け
+              家電リサイクル法を
               <br className="md:hidden" />
-              啓発広報の
+              &quot;自分ごと&quot;に
+              <br />
+              変える啓発の
               <br className="md:hidden" />
               取り組み
             </h1>
@@ -180,18 +182,23 @@ export default function KadenSeihinKyokaiCasePage() {
           <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
             <div>
               <SectionHeading title="成果" align="left" />
-              <div className="mt-8 inline-flex rounded bg-mustard px-6 py-4 text-xl font-bold text-white">
-                視聴完了率3倍
+              <div className="mt-8 rounded bg-mustard px-6 py-5 text-white">
+                <p className="text-sm font-bold leading-body">若年層の認知度 前年比</p>
+                <p className="mt-1 font-en text-[42px] font-bold leading-none md:text-[56px]">
+                  +6<span className="ml-1 font-serif text-2xl md:text-3xl">ポイント</span>
+                </p>
               </div>
-              <p className="mt-3 text-sm text-[#666666]">一般的な動画広告比</p>
+              <p className="mt-3 text-sm text-[#666666]">
+                20代の実質認知率 18%→24%（2024→2025年 自社調査）
+              </p>
             </div>
             <div className="rounded border border-border bg-white p-8">
               <div className="space-y-5 text-[15px] leading-body text-text md:text-base">
                 <p>
-                  パラパラ漫画動画の視聴完了率は、一般的な動画広告の3倍を実現。特に若年層からの反応が大きく、Xでのキャンペーン参加者は当初想定の2倍を超えました。
+                  家電製品協会様からは、「SNSを通じて毎月数値で確認でき、きちんと伝わっている実感があります」というコメントをいただきました。
                 </p>
                 <p>
-                  家電製品協会様からは、「SNSを通じて毎月数値で確認でき、きちんと伝わっている実感があります」というコメントをいただきました。
+                  取り組みを継続する中で、主なターゲットである20代の家電リサイクル法の認知度が前年比で向上しました。新聞・雑誌など効果測定が難しい手段が中心だった以前と異なり、SNSを通じて成果を数値で把握できる体制になっています。
                 </p>
               </div>
             </div>
