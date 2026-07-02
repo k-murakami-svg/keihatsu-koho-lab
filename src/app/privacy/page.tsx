@@ -32,7 +32,7 @@ export default function PrivacyPage() {
       title: '4. 外部サービスの利用',
       body: [
         '当サイトでは、コンテンツ管理にmicroCMS、お問い合わせメールの送信にResendを利用します。これらのサービスを通じて、サイト運営に必要な範囲で情報が処理される場合があります。',
-        'また、今後アクセス解析のためにGoogle Analytics 4を利用する場合があります。Google AnalyticsではCookieを使用し、個人を特定しない形でアクセス情報を収集します。',
+        'また、アクセス解析のためにGoogle Analytics 4を利用します。Google AnalyticsではCookieを使用し、個人を特定しない形でアクセス情報を収集します。',
       ],
     },
     {

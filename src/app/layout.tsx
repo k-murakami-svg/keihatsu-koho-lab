@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Footer } from '@/components/Footer'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import { Header } from '@/components/Header'
 import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/lib/jsonLd'
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-JG36CCB0RT'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://keihatsu-koho-lab.jp'),
@@ -34,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="min-h-screen">
+        <GoogleAnalytics measurementId={gaMeasurementId} />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
         <Header />
